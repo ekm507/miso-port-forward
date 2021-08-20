@@ -4,16 +4,22 @@ import threading
 
 # forward a packet
 def transfer(src, dst):
+    # start receiving data and forwarding it into the port
 
+    # while there is still data coming
     while True:
+        # get some data and put it into a buffer
         buffer = src.recv(0x400)
 
+        # if buffer is empty, then we are done
         if len(buffer) == 0:
             print( "[-] No data received! Breaking...")
             break
 
+        # send data into destination. which is the client application
         dst.send(buffer)
 
+    # when finished, close the socket from internet
     src.shutdown(socket.SHUT_RDWR)
     src.close()
 
