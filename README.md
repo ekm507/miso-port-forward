@@ -32,3 +32,11 @@ $ python3 main.py 4000 8000 8001 8002 8003
 this will forward three ports 8000, 8001 and 8002 into one single port 4000.
 
 each response from port 4000 will be sent to one of the host ports randomly. (8000, 8001, 8002)
+
+## todo
+
+- server## todo
+
+- server must be running and listening before running this app. find a solution to fix this limitation.
+- write a better CLI
+- write more docs
