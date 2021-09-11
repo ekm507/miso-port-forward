@@ -11,43 +11,6 @@ the application that wants to receive data listens to the dedicated port on loca
 
 ## block diagram
 
-```
+![block diagram image](block-diagram.jpg)
 
-        server         internet            client 
-          │               │                   │
-          │               │                   │
-          │               │                   │
-          ▼               ▼                   ▼
-    
-                                  ┌╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸┐
-                                  ╏                 this application sits here                      ╏
-                                  ╏                                                                 ╏
-                                  ╏                                                                 ╏
-                                  ╏                                                                 ╏
-                                  ╏           ┌───────────────┐                                     ╏
-                                  ╏           │               │                                     ╏
-                     ┌────────────╏───────────►  socket 1     ├──────┐                              ╏
-                     │            ╏           │               │      │                              ╏
-                     │            ╏           └───────────────┘      │                              ╏
-                     │            ╏                                  │                              ╏
-    ┌────────────────┴─┐          ╏                                  │       ┌──────────────┐       ╏
-    │                  │          ╏           ┌───────────────┐      └───────►              │       ╏    ┌────────────┐
-    │  multipath       │          ╏           │               │              │  localhost   │       ╏    │            │
-    │  multiport       ├──────────╏───────────►  socket 2     ├──────────────►  forwarding  ├───────╏────►client      │
-    │  load-balancer   │          ╏           │               │              │  socket      │       ╏    │application │
-    │                  │          ╏           └───────────────┘      ┌───────►              │       ╏    └────────────┘
-    └────────────────┬─┘          ╏                                  │       └──────────────┘       ╏
-                     │            ╏                                  │                              ╏
-                     │            ╏           ┌───────────────┐      │                              ╏
-                     │            ╏           │               │      │                              ╏
-                     └────────────╏───────────►  socket n     ├──────┘                              ╏
-                                  ╏           │               │                                     ╏
-                                  ╏           └───────────────┘                                     ╏
-                                  ╏                                                                 ╏
-                                  ╏                                                                 ╏
-                                  ╏                                                                 ╏
-                                  ╏                                                                 ╏
-                                  └╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸┘
-
-```
 _ascii block diagram drawn using asciiflow.com_
